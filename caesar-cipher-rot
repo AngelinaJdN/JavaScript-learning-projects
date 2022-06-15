@@ -1,0 +1,44 @@
+/* Script created based on a FreeCodeCamp project that codes and decodes
+messages using Caesar Cipher ROT */
+
+const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+/* Function that takes a String (str) and returns a coded message
+by shifting each letter by a Number of steps (step) */
+function code(str, step) {
+  let arr = str.toUpperCase().split('');
+  let codedArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].match(/\W/)) {
+      codedArr.push(arr[i]);
+    } else if ((alphabet.indexOf(arr[i]) + step) < 26) {
+      codedArr.push(alphabet[(alphabet.indexOf(arr[i]) + step)])
+    }
+    else {
+      codedArr.push(alphabet[(alphabet.indexOf(arr[i]) + step) - 26]);
+    }
+
+  }
+  return codedArr.join('');
+}
+
+/* Function that takes a String (str) and returns a decoded message
+by shifting each letter by a Number of steps (step) */
+function decode(str, step)  {
+  let arr = str.toUpperCase().split('');
+  let decodedArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].match(/\W/)) {
+      decodedArr.push(arr[i]);
+    } else if ((alphabet.indexOf(arr[i]) - step) >= 0) {
+      decodedArr.push(alphabet[(alphabet.indexOf(arr[i]) - step)])
+    }
+    else {
+      decodedArr.push(alphabet[26 + (alphabet.indexOf(arr[i]) - step)]);
+    }
+
+  }
+  return decodedArr.join('');
+}
