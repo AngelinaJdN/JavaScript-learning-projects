@@ -4,7 +4,7 @@
 
 function strongPassword(str) {
 
-  if (/.{8,}/.test(str) && /[A-Z]/.test(str) && /[a-z]/.test(str) && /\d/.test(str) && /\W/.test(str)) {
+  if (/.{8,}/.test(str) && /[A-Z]/.test(str) && /[a-z]/.test(str) && /\d/.test(str) && /\W|_/.test(str)) {
     return true;
   } else return false;
 
