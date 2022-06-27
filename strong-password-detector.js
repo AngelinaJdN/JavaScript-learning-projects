@@ -3,13 +3,8 @@
 // one digit and min one special character) or not. Exercise made to learn JS.
 
 function strongPassword(str) {
-  let eightChar = /.{8,}/;
-  let upper = /[A-Z]/;
-  let lower = /[a-z]/;
-  let digit = /\d/;
-  let special = /\W/;
 
-  if (eightChar.test(str) && upper.test(str) && lower.test(str) && digit.test(str) && special.test(str)) {
+  if (/.{8,}/.test(str) && /[A-Z]/.test(str) && /[a-z]/.test(str) && /\d/.test(str) && /\W/.test(str)) {
     return true;
   } else return false;
 
