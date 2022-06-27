@@ -5,7 +5,7 @@ function telephoneCheck(str) {
   let withoutParenthesis = /^(1 ?)?([0-9]{3}(-| )?)([0-9]{3}(-| )?)([0-9]{4})$/;
   let withParenthesis = /^(1 ?)?[(]([0-9]{3}[)](-| )?)([0-9]{3}(-| )?)([0-9]{4})$/;
 
-  if (withoutParenthesis.test(str) | withParenthesis.test(str)) {
+  if (withoutParenthesis.test(str) || withParenthesis.test(str)) {
     return true;
   }
   else return false;
