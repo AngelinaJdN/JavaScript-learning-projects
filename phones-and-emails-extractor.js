@@ -5,7 +5,7 @@
 
 function phoneAndEmail(str) {
   let phone = /(1 ?)?(\d{3}(-| )?)(\d{3}(-| )?)(\d{4})/g;
-  let phoneParenthesis = /(1 ?)?[(](\d{3}[)](-| )?)(\d{3}(-| )?)(\d{4})/g;
+  let phoneParenthesis = /(1 ?)?\((\d{3}\)(-| )?)(\d{3}(-| )?)(\d{4})/g;
   let email = /\w+@\w+\.\w+/g;
   let phoneAndEmailArr = []
 		let phonesAndEmails = {phones: [], emails: []}
